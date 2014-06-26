@@ -222,6 +222,6 @@ module SfOpticon::Scm::Github
   # Pushes changes to remote
   def push
     log.info { "Pushing to origin" }
-    git.push('origin', "#{name}:#{name}", true)
+    git.push('origin', "#{name}:#{name}", {tags: true, force: true})
   end
 end
