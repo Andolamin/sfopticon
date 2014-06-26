@@ -40,8 +40,37 @@ logging:
 
 # Set "test" to true, to allow logging into test.salesforce.com for your "production" env
 salesforce:
+  force_change: # These types are actually groups of types. For now assume that they've changed when doing modification detection
+    - CustomObject
+    - CustomLabels
+    - Workflow
   metadata_types:
+    - CustomObject
+    - Profile
     - ApexClass
+    - ApexTrigger
     - ApexComponent
     - ApexPage
-    - ApexTrigger
+    - Layout
+    - CustomTab
+    - CustomApplication
+    - CustomPageWebLink
+    - Workflow
+    - EmailTemplate
+    - PermissionSet
+    - ReportType
+    - Report
+    - Dashboard
+    - StaticResource
+    - CustomLabels
+    - Document
+    - Portal
+    - CustomSite
+    - RemoteSiteSetting
+    - HomePageLayout
+    - HomePageComponent
+    - Scontrol
+    - Letterhead
+    - AnalyticSnapshot
+    - DataCategoryGroup
+    - CustomObjectTranslation
