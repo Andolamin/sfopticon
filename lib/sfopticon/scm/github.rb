@@ -210,7 +210,12 @@ module SfOpticon::Scm::Github
       git.config('user.email', author_email)
     end
 
-    git.commit(message, :allow_empty => false)
+	begin
+		git.commit(message, :allow_empty => false)
+	rescue
+		log.info { "Ignoring empty commit" }
+		# Ignore failed commits
+	end
   end
 
   ##
