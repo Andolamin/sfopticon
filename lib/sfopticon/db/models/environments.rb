@@ -240,10 +240,10 @@ class SfOpticon::Environment < ActiveRecord::Base
 
       case change.change_type
       when :deletion
-        sf_objects.find_by_sfobject_id(change.sf_object[:sfobject_id]).delete
+        sf_objects.find_by_file_name(change.sf_object[:file_name]).delete
       when :modification
         sf_objects
-        .find_by_sfobject_id(change.sf_object[:sfobject_id])
+        .find_by_file_name(change.sf_object[:file_name])
         .clobber(change.sf_object)
       when :addition
         sf_objects << sf_objects.new(change.sf_object)
